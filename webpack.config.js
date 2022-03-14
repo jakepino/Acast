@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = {
-  entry: './public/client/index.js',
+  entry: './public/index.js',
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'public/dist'),
