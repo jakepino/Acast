@@ -4,7 +4,6 @@ function Player({ currentEp, setMarkerDisplay }) {
   const player1 = useRef();
   const scrollBar = useRef();
   const markers = currentEp.markers;
-  console.log(markers);
 
   const [tooglePlay, setPlayToogle] = useState(false);
   const [epCurrentTime, setEpCurrentTime] = useState(0);
@@ -29,7 +28,7 @@ function Player({ currentEp, setMarkerDisplay }) {
           markersArrCopy.slice(midPoint + 1)
         );
       }
-    } else if (currentTime < start) {
+    } else {
       return withinMarkerCheck(currentTime, markersArrCopy.slice(0, midPoint));
     }
   };
@@ -44,8 +43,6 @@ function Player({ currentEp, setMarkerDisplay }) {
     const currentMarker = withinMarkerCheck(player1.current.currentTime);
     if (currentMarker) {
       setMarkerDisplay(currentMarker);
-    } else {
-      setMarkerDisplay('Hello');
     }
   };
 
@@ -62,8 +59,6 @@ function Player({ currentEp, setMarkerDisplay }) {
   const handleChange = () => {
     player1.current.currentTime = Number(scrollBar.current.value);
   };
-
-  console.log(player1.current);
 
   return (
     <div id='player-container'>

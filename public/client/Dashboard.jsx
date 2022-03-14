@@ -21,7 +21,9 @@ function Dashboard(props) {
       </div>
       <div id='marker-content'>
         {currMarkerDisplay && currMarkerDisplay.type === 'ad' ? (
-          <a href={currMarkerDisplay.link}>{currMarkerDisplay.content}</a>
+          <a href={currMarkerDisplay.link} target='_blank'>
+            {currMarkerDisplay.content}
+          </a>
         ) : currMarkerDisplay.type === 'text' ? (
           <div>{currMarkerDisplay.content}</div>
         ) : currMarkerDisplay.type === 'image' ? (
